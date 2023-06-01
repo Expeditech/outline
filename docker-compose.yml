@@ -1,22 +1,36 @@
 version: "3"
 services:
+  outline:
+    image: expd-outline:latest
+    env_file: ./.env
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+      - redis
+      - s3
   redis:
     image: redis
     ports:
       - "127.0.0.1:6379:6379"
     user: "redis:redis"
   postgres:
+    container_name: postgres
     image: postgres
     ports:
-      - "127.0.0.1:5432:5432"
+      - "5432:5432"
+    volumes:
+      - database-data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
       POSTGRES_DB: outline
-    user: "postgres:postgres"
   s3:
     image: lphoward/fake-s3
     ports:
       - "127.0.0.1:4569:4569"
     volumes:
       - ./fakes3:/fakes3_root
+volumes:
+  database-data:

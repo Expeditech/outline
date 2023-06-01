@@ -12,3 +12,5 @@ fakes3/*
 *.pem
 *.key
 *.cert
+.env
+docker-compose.yml

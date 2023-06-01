@@ -550,9 +550,7 @@ class DocumentScene extends React.Component<Props> {
             </MaxWidth>
             {isShare &&
               !parseDomain(window.location.origin).custom &&
-              !auth.user && (
-                <Branding href="//www.getoutline.com?ref=sharelink" />
-              )}
+              !auth.user && <Branding href="//wiki.expeditech.net" />}
           </Container>
           {!isShare && (
             <Footer>

@@ -581,7 +581,7 @@ export class Environment {
   /**
    * The product name
    */
-  public APP_NAME = "Outline";
+  public APP_NAME = "Expeditech wiki";
 
   /**
    * Returns true if the current installation is the cloud hosted version at

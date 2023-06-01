@@ -14,8 +14,8 @@ dotenv.config({
   silent: true,
 });
 
-export default () => {
-  return defineConfig({
+export default () =>
+  defineConfig({
     root: "./",
     publicDir: "./server/static",
     base: (process.env.CDN_URL ?? "") + "/static/",
@@ -53,8 +53,8 @@ export default () => {
           },
         },
         manifest: {
-          name: "Outline",
-          short_name: "Outline",
+          name: "Expeditech",
+          short_name: "Expeditech",
           theme_color: "#fff",
           background_color: "#fff",
           start_url: "/",
@@ -124,4 +124,3 @@ export default () => {
       },
     },
   });
-};
